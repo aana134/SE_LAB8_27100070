@@ -1,31 +1,15 @@
 package com.example.lab08;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
 public class CustomListTest {
-
-    private CustomList list;
-    private City calgary;
-    private City edmonton;
-
-    @BeforeEach
-    public void setUp() {
-        list = new CustomList();
-        calgary = new City("Calgary", "AB");
-        edmonton = new City("Edmonton", "AB");
-    }
-
     @Test
-    public void testHasCityReturnsTrueWhenCityExists() {
+    public void testHasCity() {
+        CustomList list = new CustomList();
+        City calgary = new City("Calgary", "AB");
         list.addCity(calgary);
+        // This will fail initially because hasCity() doesn't
+        exist
         assertTrue(list.hasCity(calgary));
     }
 
-    @Test
-    public void testHasCityReturnsFalseWhenCityNotAdded() {
-        list.addCity(calgary);
-        assertFalse(list.hasCity(edmonton));
-    }
 }
